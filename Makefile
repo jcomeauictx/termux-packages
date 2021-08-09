@@ -11,3 +11,8 @@ sdk:
 	./scripts/setup-android-sdk.sh
 docker: scripts/run-docker.sh
 	$<
+clean: scripts/run-docker.sh
+	$< ./clean.sh  # doesn't seem to work
+	scripts/update-docker.sh
+env:
+	$@
