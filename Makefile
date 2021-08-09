@@ -1,4 +1,6 @@
-ANDROID_HOME ?= $(HOME)/Downloads/adt-bundle-linux-x86_64-20130717/sdk
+TERMUX_ARCH ?= arm
+ANDROID_HOME ?= $(HOME)/lib/android-sdk
+SDKMANAGER ?= $(ANDROID_HOME)/tools/bin/sdkmanager
 export
 # https://github.com/termux/termux-packages/wiki/Build-environment
 all: scripts/run-docker.sh
@@ -7,3 +9,5 @@ all: scripts/run-docker.sh
 	sudo apt install docker.io
 sdk:
 	./scripts/setup-android-sdk.sh
+docker: scripts/run-docker.sh
+	$<
