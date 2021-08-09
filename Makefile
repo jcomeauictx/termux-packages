@@ -4,7 +4,7 @@ SDKMANAGER ?= $(ANDROID_HOME)/tools/bin/sdkmanager
 export
 # https://github.com/termux/termux-packages/wiki/Build-environment
 all: scripts/run-docker.sh
-	$< ./build-all.sh
+	$< ./build-all.sh -a arm
 /usr/bin/docker:
 	sudo apt install docker.io
 sdk:
