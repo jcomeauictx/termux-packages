@@ -17,3 +17,5 @@ clean: scripts/run-docker.sh
 	scripts/update-docker.sh
 env:
 	$@
+%.build: scripts/run-docker.sh
+	/bin/bash $(VERBOSE) $< ./build-package.sh -a arm $*
